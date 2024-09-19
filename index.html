@@ -31,6 +31,27 @@
     <link rel="stylesheet" type="text/css" href="assets/css/owl-carousel.css">
     <link rel="stylesheet" type="text/css" href="assets/css/timeline.css">
     <link rel="stylesheet" type="text/css" href="assets/css/testimonial.css">
+    <style>
+        #iframe-container {
+            display: none;
+            margin-top: 20px;
+        }
+        .video-container {
+            position: relative;
+        }
+        .show-iframe-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
 
 
 </head>
@@ -55,12 +76,18 @@
 
 
 
-    <div class="header-area1 ">
+    <!-- <div class="header-area1 ">
         <video autoplay loop muted plays-inline class="background-clip">
             <source src="assets/images/video.mp4" type="video/mp4">
         </video>
-    </div>
+    </div> -->
 
+    <div class="header-area1 video-container">
+        <video autoplay loop muted plays-inline class="background-clip">
+            <source src="assets/images/video.mp4" type="video/mp4">
+        </video>
+        <button class="show-iframe-btn" onclick="showIframe()">Show Business Model</button>
+    </div>
 
     <header class="header-area header-sticky">
 
@@ -143,7 +170,7 @@
 
 
     <!-- ***** Welcome Area Start ***** -->
-    <div class="welcome-area responsive" id="welcome">
+    <!-- <div class="welcome-area responsive" id="welcome"> -->
 
 
         <!-- ***** Header Text Start ***** -->
@@ -197,7 +224,7 @@
                             more equitable and sustainable food system.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-12 col-sm-12 mobile-top-fix">
+                <div class="col-lg-4 col-md-12 col-sm-12 mobile-top-fix" id="iframe-container">
                     <div class="embed-container">
                         <iframe src="https://bussines-model.vercel.app/" height="900px" width="100%"></iframe>
                     </div>
@@ -853,6 +880,14 @@
 
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>
+
+    <script>
+        function showIframe() {
+            var iframeContainer = document.getElementById('iframe-container');
+            iframeContainer.style.display = 'block';
+            iframeContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 
 
 </body>
