@@ -32,8 +32,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/timeline.css">
     <link rel="stylesheet" type="text/css" href="assets/css/testimonial.css">
     <style>
+        /* Remove display: none to keep the iframe visible initially */
         #iframe-container {
-            display: none;
             margin-top: 20px;
         }
         .video-container {
@@ -918,7 +918,6 @@
     <script>
         function showIframe() {
             var iframeContainer = document.getElementById('iframe-container');
-            iframeContainer.style.display = 'block';
             iframeContainer.scrollIntoView({ behavior: 'smooth' });
         }
     </script>
