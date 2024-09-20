@@ -40,16 +40,50 @@
             position: relative;
         }
         .show-iframe-btn {
-            position: absolute;
-            top: 50%;
+            position: relative;
+            top: 48.5%;
             left: 50%;
             transform: translate(-50%, -50%);
             padding: 10px 20px;
-            font-size: 18px;
-            background-color: #007bff;
+            font-size: 24px;
+            font-weight: 900; /* Make the text bold */
+            background: linear-gradient(to left,#1e81fa, #10ff48eb);
             color: white;
             border: none;
             cursor: pointer;
+            border-radius: 1.5rem;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .show-iframe-btn:before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            z-index: -1;
+            background: linear-gradient(to right,#1e81fa, #10ff48eb);
+            border-radius: inherit;
+            background-clip: padding-box;
+            border: solid 2px transparent;
+            animation: ping 1s infinite;
+        }
+
+        @keyframes ping {
+            0% {
+                transform: scale(0.1, 0.1);
+                opacity: 0;
+            }
+            70% {
+                transform: scale(1, 1);
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
         }
     </style>
 
@@ -86,7 +120,7 @@
         <video autoplay loop muted plays-inline class="background-clip">
             <source src="assets/images/video.mp4" type="video/mp4">
         </video>
-        <button class="show-iframe-btn" onclick="showIframe()">Show Business Model</button>
+        <button class="show-iframe-btn" onclick="showIframe()">Check Your Business Inclusivity! </button>
     </div>
 
     <header class="header-area header-sticky">
